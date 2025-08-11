@@ -1,25 +1,29 @@
 body {
   text-align: center;
   background-color: #011F3F;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Full height center */
+  margin: 0;
 }
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
-  margin:  5%;
+  margin-bottom: 40px;
   color: #FEF2BF;
 }
 
 .container {
-  display: block;
-  width: 50%;
-  margin: auto;
-
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Always 2 per row */
+  gap: 20px; /* Space between boxes */
+  justify-content: center;
 }
 
 .btn {
-  margin: 25px;
-  display: inline-block;
   height: 200px;
   width: 200px;
   border: 10px solid black;
@@ -33,21 +37,51 @@ body {
 
 .red {
   background-color: red;
+  margin-top: 30px;
 }
 
 .green {
   background-color: green;
+  margin-top: 30px;
 }
 
 .blue {
   background-color: blue;
+  margin-top: 30px;
 }
 
 .yellow {
   background-color: yellow;
+  margin-top: 30px;
 }
 
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+/* Responsive scaling */
+@media (max-width: 768px) {
+  #level-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    height: 120px;
+    width: 120px;
+    border-width: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    height: 90px;
+    width: 90px;
+    border-width: 6px;
+  }
+
+  #level-title {
+    font-size: 1.5rem;
+  }
 }
